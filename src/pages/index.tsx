@@ -5,6 +5,7 @@ import styles from '@/styles/Home.module.css'
 import { stripe } from '@/lib/stripe'
 import { GetServerSideProps } from 'next'
 import Stripe from 'stripe'
+import { HomeContainer, Product } from '@/styles/pages/home'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,10 +20,15 @@ interface HomeProps {
 
 export default function Home({ products }: HomeProps) {
   return (
-    <>
-      <h1>Hello</h1>
-      <pre>{JSON.stringify(products)}</pre>
-    </>
+    <HomeContainer>
+      <Product>
+        <Image src={} width={520} height={480} alt='' />
+        <footer>
+          <strong>Camiseta XXX</strong>
+          <span>Camiseta XXX</span>
+        </footer>
+      </Product>
+    </HomeContainer>
   )
 }
 
